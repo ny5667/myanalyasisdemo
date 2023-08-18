@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.supcon.greendill</groupId>
+		<artifactId>SESECD</artifactId>
+		<version>6.1.3.4</version>
+	</parent>
+	<groupId>com.supcon.greendill.SESECD</groupId>
+	<artifactId>com.supcon.greendill.SESECD.core</artifactId>
+	<name>SESECD Core</name>
+
+	<properties>
+		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.supcon.greendill.alarm</groupId>
+			<artifactId>com.supcon.greendill.alarm.core</artifactId>
+			<version>6.1.6.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.greendill.SesCommonFunc</groupId>
+			<artifactId>com.supcon.greendill.SesCommonFunc.core</artifactId>
+			<version>6.1.2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.greendill.SESEAB</groupId>
+			<artifactId>com.supcon.greendill.SESEAB.core</artifactId>
+			<version>6.1.0.14</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.greendill.SESED</groupId>
+			<artifactId>com.supcon.greendill.SESED.core</artifactId>
+			<version>6.1.3.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.greendill.SESGISConfig</groupId>
+			<artifactId>com.supcon.greendill.SESGISConfig.core</artifactId>
+			<version>6.1.9.12</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.greendill.SESWssEP</groupId>
+			<artifactId>com.supcon.greendill.SESWssEP.core</artifactId>
+			<version>6.1.0.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.greendill.SESWssER</groupId>
+			<artifactId>com.supcon.greendill.SESWssER.core</artifactId>
+			<version>6.1.0.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.supcon.greendill.VideoPlayWeb</groupId>
+			<artifactId>com.supcon.greendill.VideoPlayWeb.core</artifactId>
+			<version>6.1.9.3</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/main/java</source>
+								<source>src/main/custom</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

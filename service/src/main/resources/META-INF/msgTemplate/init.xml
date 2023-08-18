@@ -1,0 +1,197 @@
+<InitXmlEntity>
+    <MsgTypeList>
+
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>EmergencyEventCreate</code>
+            <name>事件生成</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>EmergencyEventEnd</code>
+            <name>事件关闭</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>AlarmActionNotice</code>
+            <name>指令下达通知</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>EmergencyAction</code>
+            <name>应急行动消息</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>ReceiveAlarm</code>
+            <name>应急行动消息</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>EmergencySituation</code>
+            <name>应急态势消息</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>ReceiveEmcAction</code>
+            <name>应急行动模板</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>ReceiveEmcSituation</code>
+            <name>应急态势模板</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>ECDMsg</code>
+            <name>应急小组消息推送模板</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+        <MsgType>
+            <!-- 排序目前无用，可随意-->
+            <ordby>40</ordby>
+            <code>ECDReport</code>
+            <name>事件上报APP消息推送模板</name>
+            <tempParent>default_BAPType</tempParent>
+        </MsgType>
+    </MsgTypeList>
+    <MsgModelList>
+        <MsgModel>
+            <code>EmergencyEventCreateEmail</code>
+            <name>事件生成消息推送模板</name>
+            <title>应急事件生成</title>
+            <protocol>email</protocol>
+            <content>应急事件【:${accidentName}】已生成，时间【:${happenTime}】,地点【:${position}】,接警人【:${recevier}】,接警时间【:${Rectime}】,描述【:${description}】,请注意查看！</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>EmergencyEventCreate</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>EmergencyEventEndEmail</code>
+            <name>事件关闭消息推送模板</name>
+            <title>应急事件关闭</title>
+            <protocol>email</protocol>
+            <content>应急事件【:${accidentName}】已关闭，请注意查看！</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>EmergencyEventEnd</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>AlarmActionNoticeEmail</code>
+            <name>指令下达通知</name>
+            <title>指令下达生成行动-关联应急事件：${accidentName}!</title>
+            <protocol>email</protocol>
+            <content>指令下达生成行动:关联应急事件【:${accidentName}】在 :${actionAddr} ：${actionTime}有最新的应急行动【${description}】，目前行动状态为：${actionState}</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>AlarmActionNotice</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>EmergencyAction</code>
+            <name>应急行动消息</name>
+            <title>应急行动-关联应急事件：${accidentName}!</title>
+            <protocol>email</protocol>
+            <content>关联应急事件【:${accidentName}】在 :${actionAddr} ：${actionTime}有最新的应急行动【${description}】，目前行动状态为：${actionState}</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>EmergencyAction</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>ReceiveAlarm</code>
+            <name>应急行动消息</name>
+            <title>应急行动-关联应急事件：${accidentName}!</title>
+            <protocol>email</protocol>
+            <content>关联应急事件【:${accidentName}】在 :${actionAddr} ：${actionTime}有最新的应急行动【${description}】，目前行动状态为：${actionState}</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>ReceiveAlarm</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>EmergencySituation</code>
+            <name>应急态势消息</name>
+            <title>应急态势-关联应急事件：${accidentName}!</title>
+            <protocol>email</protocol>
+            <content>关联应急事件【:${accidentName}】 在${position} ${occursTime} 有最新应急态势【${describtion}】，上报人为：${reportPerson}，目前受伤人数为：${woundedPerson}!，死亡人数为：${deathPerson}!</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>EmergencySituation</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>ReceiveEmcAction</code>
+            <name>应急行动模板</name>
+            <title>收到应急行动!</title>
+            <protocol>email</protocol>
+            <content>应急行动-关联应急事件：${accidentName}! 关联应急事件【:${accidentName}】在 :${actionAddr} ：${actionTime}有最新的应急行动【${description}】，目前行动状态为：${actionState}  true</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>ReceiveEmcAction</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>ReceiveEmcSituation</code>
+            <name>应急态势模板</name>
+            <title>收到应急态势!</title>
+            <protocol>email</protocol>
+            <content>收到应急态势!situationId:${situationId},eventId:${eventId}</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>ReceiveEmcSituation</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>ECDMsg</code>
+            <name>应急小组消息推送模板</name>
+            <title>应急小组消息推送!</title>
+            <protocol>email</protocol>
+            <content>您有一条新的消息推送!${msgTitle},内容：${msgContent},请及时处理！</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>ECDMsg</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+        <MsgModel>
+            <code>ECDReport</code>
+            <name>事件上报APP消息推送模板</name>
+            <title>应急事件上报</title>
+            <protocol>mobile</protocol>
+            <content>您有一条新的消息推送!应急事件上报,内容：${msgContent},请及时处理！</content>
+            <url></url>
+            <isUsed>true</isUsed>
+            <msgTypeCode>ECDReport</msgTypeCode>
+            <memo></memo>
+            <extendContent></extendContent>
+        </MsgModel>
+    </MsgModelList>
+</InitXmlEntity>

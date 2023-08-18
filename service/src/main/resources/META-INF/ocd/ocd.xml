@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <OCD description="%SESECD.ocdconfig" name="%SESECD.ocdconfig" id="platform.bap.SESED" type="flat" isWs="true" moduleCode="SESECD_1.0.0">
+    <AD isWs="true" name="%SESECD.isPls" id="SESECD.isPls" cardinality="1" hasEmpty="false" required="true" order="1" type="Boolean" description="%SESECD.isPls" default="false" >
+		<Option label="%SESECD.true" value="true" order="0"/>
+		<Option label="%SESECD.false" value="false" order="1"/>
+	</AD>
+     <AD isWs="true" name="%SESECD.isRoute" id="SESECD.isRoute" cardinality="1" hasEmpty="false" required="true" order="2" type="Boolean" description="%SESECD.isPls" default="false" >
+         <Option label="%SESECD.true" value="true" order="0"/>
+         <Option label="%SESECD.false" value="false" order="1"/>
+     </AD>
+     <AD isWs="true" name="%SESECD.isWind" id="SESECD.isWind" cardinality="1" hasEmpty="false" required="true" order="3" type="Boolean" description="%SESECD.isPls" default="false" >
+         <Option label="%SESECD.true" value="true" order="0"/>
+         <Option label="%SESECD.false" value="false" order="1"/>
+     </AD>
+ </OCD>
+  <Localization locale="zh_CN">
+		SESECD.ocdconfig=应急指挥
+		SESECD.isPls=是否集成人员定位
+		SESECD.isRoute=是否集成逃生路线
+		SESECD.isWind=是否集成风向
+ </Localization>
+ <Localization locale="en_US">
+		SESECD.ocdconfig=Emergency Command
+		SESECD.isPls=Whether to integrate people location services
+        SESECD.isRoute=Whether the escape route is integrated
+        SESECD.isWind=Whether to integrate the wind
+ </Localization>
+</metatype:MetaData>

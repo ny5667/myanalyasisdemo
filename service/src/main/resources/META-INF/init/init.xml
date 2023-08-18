@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Models>
+  <model id="AllEmerMember" tableName="SES_ALL_EMER_MEMBERS" extends="AbstractEcTreeEntity" description="所有应急小组">
+    <property id="belongDepartment" columnName="BELONG_DEPARTMENT" type="LONG" description="所属部门"/>
+    <property id="departMentName" columnName="DEPART_MENT_NAME" type="TEXT" description="部门名称"/>
+    <property id="emerMembers" columnName="EMER_MEMBERS" type="LONG" description="应急小组"/>
+    <property id="mobile" columnName="MOBILE" type="TEXT" description="手机"/>
+    <property id="personId" columnName="PERSON_ID" type="LONG" description="人员"/>
+    <property id="personName" columnName="PERSON_NAME" type="TEXT" description="人员姓名"/>
+    <property id="sectionName" columnName="SECTION_NAME" type="TEXT" description="通讯组名称"/>
+    <property id="staffCode" columnName="STAFF_CODE" type="TEXT" description="人员编码"/>
+    <property id="telephone" columnName="TELEPHONE" type="TEXT" description="应急电话"/>
+  </model>
+  <model id="EmerExperts" tableName="ECD_EMER_EXPERTSS" extends="AbstractEcPartEntity" description="应急专家">
+    <property id="accidentType" columnName="ACCIDENT_TYPE" type="TEXT" description="擅长事故类型"/>
+    <property id="expertField" columnName="EXPERT_FIELD" type="TEXT" description="专业领域"/>
+    <property id="expertType" columnName="EXPERT_TYPE" type="TEXT" description="专家类型"/>
+    <property id="name" columnName="NAME" type="TEXT" description="姓名"/>
+    <property id="phone" columnName="PHONE" type="TEXT" description="手机号码"/>
+    <property id="speciality" columnName="SPECIALITY" type="TEXT" description="专业特长"/>
+    <property id="tel" columnName="TEL" type="TEXT" description="电话"/>
+    <property id="workplace" columnName="WORKPLACE" type="TEXT" description="工作单位"/>
+  </model>
+  <model id="EmerMembers" tableName="SES_ECD_EMER_MEMBERSS" extends="AbstractEcPartEntity" description="应急小组">
+    <property id="mobile" columnName="MOBILE" type="TEXT" description="手机号码"/>
+    <property id="name" columnName="NAME" type="TEXT" description="姓名"/>
+    <property id="onlineStatus" columnName="ONLINE_STATUS" type="TEXT" description="在线状态"/>
+    <property id="role" columnName="ROLE" type="TEXT" description="岗位"/>
+    <property id="sectionName" columnName="SECTION_NAME" type="TEXT" description="通讯组名称"/>
+    <property id="staffCode" columnName="STAFF_CODE" type="TEXT" description="人员编码"/>
+    <property id="staffId" columnName="STAFF_ID" type="LONG" description="人员ID"/>
+    <property id="telephone" columnName="TELEPHONE" type="TEXT" description="应急电话"/>
+  </model>
+  <model id="Accident" tableName="ECD_ACCIDENTS" extends="AbstractEcPartEntity" description="事故案例">
+    <property id="accidentCause" columnName="ACCIDENT_CAUSE" type="TEXT" description="事故原因, 事故原因"/>
+    <property id="accidentType" columnName="ACCIDENT_TYPE" type="LONG" description="事故类型, 事故类型"/>
+    <property id="casualtySituation" columnName="CASUALTY_SITUATION" type="TEXT" description="伤亡情况, 伤亡情况"/>
+    <property id="emergencyResponseProcess" columnName="EMERGENCY_RESPONSE_PROCESS" type="TEXT" description="应急处置过程, 应急处置过程"/>
+    <property id="occurrenceProcess" columnName="OCCURRENCE_PROCESS" type="TEXT" description="发生过程, 发生过程"/>
+    <property id="preventionAdvice" columnName="PREVENTION_ADVICE" type="TEXT" description="防范建议, 防范建议"/>
+  </model>
+  <model id="ActionOwners" tableName="SES_ECD_ACTION_OWNERSS" extends="AbstractEcPartEntity" description="指令负责人">
+    <property id="actionId" columnName="ACTION_ID" type="LONG" description="指令ID"/>
+    <property id="owner" columnName="OWNER" type="LONG" description="负责人（作废）"/>
+    <property id="ownPerson" columnName="OWN_PERSON" type="LONG" description="责任人"/>
+  </model>
+  <model id="AlarmActCamera" tableName="ECD_ALARM_ACT_CAMERAS" extends="AbstractEcPartEntity" description="指令摄像头">
+    <property id="alarmActionId" columnName="ALARM_ACTION_ID" type="LONG" description="指令Id"/>
+    <property id="videoId" columnName="VIDEO_ID" type="LONG" description="摄像头"/>
+  </model>
+  <model id="AlarmAction" tableName="SES_ECD_ALARM_ACTIONS" extends="AbstractEcPartEntity" description="关联指令">
+    <property id="actionAddress" columnName="ACTION_ADDRESS" type="TEXT" description="行动地点"/>
+    <property id="actionCatogory" columnName="ACTION_CATOGORY" type="SYSTEMCODE" description="行动分类"/>
+    <property id="actionDescription" columnName="ACTION_DESCRIPTION" type="TEXT" description="行动描述"/>
+    <property id="actionName" columnName="ACTION_NAME" type="TEXT" description="行动名称"/>
+    <property id="alarmId" columnName="ALARM_ID" type="LONG" description="接警ID"/>
+    <property id="commomState" columnName="COMMOM_STATE" type="SYSTEMCODE" description="指令状态"/>
+    <property id="emergencyPlan" columnName="EMERGENCY_PLAN" type="LONG" description="预案, 确认指令关联的具体预案使用"/>
+    <property id="iconGis" columnName="ICON_GIS" type="LONG" description="图标2"/>
+    <property id="instructions" columnName="INSTRUCTIONS" type="LONG" description="指令"/>
+    <property id="isMapPoint" columnName="IS_MAP_POINT" type="BOOLEAN" description="是否已录入坐标"/>
+    <property id="mapPoint" columnName="MAP_POINT" type="LAYER" description="坐标"/>
+    <property id="owner" columnName="OWNER" type="LONG" description="责任人（作废）"/>
+    <property id="ownPerson" columnName="OWN_PERSON" type="LONG" description="责任人（使用中）"/>
+    <property id="sectionId" columnName="SECTION_ID" type="TEXT" description="通讯组Id"/>
+    <property id="sectionObj" columnName="SECTION_OBJ" type="LONG" description="通讯组"/>
+  </model>
+  <model id="AlarmEnenetrel" tableName="SES_ECD_ALARM_ENENETRELS" extends="AbstractEcPartEntity" description="事故类型">
+    <property id="alarmId" columnName="ALARM_ID" type="LONG" description="接警ID"/>
+    <property id="enenetrel" columnName="ENENETREL" type="LONG" description="事故类型"/>
+  </model>
+  <model id="AlmAlarmRecord" tableName="SES_ECD_ALARM_RECORDS" extends="AbstractEcFullEntity" description="接警记录">
+    <property id="accidentClass" columnName="ACCIDENT_CLASS" type="SYSTEMCODE" description="事故类别"/>
+    <property id="accidentId" columnName="ACCIDENT_ID" type="INTEGER" description="事故Id"/>
+    <property id="accidentLevel" columnName="ACCIDENT_LEVEL" type="SYSTEMCODE" description="事故等级"/>
+    <property id="accidentName" columnName="ACCIDENT_NAME" type="TEXT" description="事件名称"/>
+    <property id="accidentReason" columnName="ACCIDENT_REASON" type="SYSTEMCODE" description="事故原因"/>
+    <property id="accidentType" columnName="ACCIDENT_TYPE" type="LONG" description="事故类型"/>
+    <property id="alarmIds" columnName="ALARM_IDS" type="TEXT" description="应急事件IDS"/>
+    <property id="alarmLevel" columnName="ALARM_LEVEL" type="SYSTEMCODE" description="报警等级"/>
+    <property id="alarmPerson" columnName="ALARM_PERSON" type="LONG" description="报警人"/>
+    <property id="alarmPhone" columnName="ALARM_PHONE" type="TEXT" description="报警人电话"/>
+    <property id="alarmSource" columnName="ALARM_SOURCE" type="TEXT" description="来源"/>
+    <property id="alarmType" columnName="ALARM_TYPE" type="SYSTEMCODE" description="报警类别"/>
+    <property id="alertRecordId" columnName="ALERT_RECORD_ID" type="LONG" description="报警记录"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="deathPerson" columnName="DEATH_PERSON" type="INTEGER" description="死亡人数"/>
+    <property id="description" columnName="DESCRIPTION" type="TEXT" description="事件描述"/>
+    <property id="drillPlanId" columnName="DRILL_PLAN_ID" type="LONG" description="演练计划ID"/>
+    <property id="emEventLeveL" columnName="EM_EVENT_LEVEL" type="LONG" description="事件分级"/>
+    <property id="emEventType" columnName="EM_EVENT_TYPE" type="LONG" description="事件分类"/>
+    <property id="eventDataSource" columnName="EVENT_DATA_SOURCE" type="SYSTEMCODE" description="事件数据来源"/>
+    <property id="eventNo" columnName="EVENT_NO" type="TEXT" description="事件编号"/>
+    <property id="eventSource" columnName="EVENT_SOURCE" type="SYSTEMCODE" description="事件来源"/>
+    <property id="eventType" columnName="EVENT_TYPE" type="SYSTEMCODE" description="事件类型"/>
+    <property id="happenTime" columnName="HAPPEN_TIME" type="DATETIME" description="事发时间"/>
+    <property id="hei" columnName="HEI" type="TEXT" description="地图高度"/>
+    <property id="hpmDepartment" columnName="HPM_DEPARTMENT" type="LONG" description="事发部门"/>
+    <property id="hpnCompany" columnName="HPN_COMPANY" type="LONG" description="事发公司"/>
+    <property id="isEmergency" columnName="IS_EMERGENCY" type="BOOLEAN" description="进入应急处置"/>
+    <property id="isIncident" columnName="IS_INCIDENT" type="BOOLEAN" description="是否应急事件"/>
+    <property id="isOver" columnName="IS_OVER" type="BOOLEAN" description="是否结束"/>
+    <property id="isSimulation" columnName="IS_SIMULATION" type="BOOLEAN" description="演练事件"/>
+    <property id="isTurnAlarm" columnName="IS_TURN_ALARM" type="BOOLEAN" description="是否归档"/>
+    <property id="lat" columnName="LAT" type="TEXT" description="地图纬度"/>
+    <property id="locationIncident" columnName="LOCATION_INCIDENT" type="LONG" description="事发地点"/>
+    <property id="lon" columnName="LON" type="TEXT" description="地图经度"/>
+    <property id="mapPoint" columnName="MAP_POINT" type="LAYER" description="坐标"/>
+    <property id="mesPerson" columnName="MES_PERSON" type="LONG" description="消息接收人"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="openLabel" columnName="OPEN_LABEL" type="BOOLEAN" description="是否打开扩展信息"/>
+    <property id="overTime" columnName="OVER_TIME" type="DATETIME" description="结束时间"/>
+    <property id="point" columnName="POINT" type="TEXT" description="坐标点"/>
+    <property id="pointInfo" columnName="POINT_INFO" type="TEXT" description="坐标"/>
+    <property id="position" columnName="POSITION" type="TEXT" description="发生位置"/>
+    <property id="process" columnName="PROCESS" type="TEXT" description="处理记录"/>
+    <property id="processState" columnName="PROCESS_STATE" type="SYSTEMCODE" description="处理状态"/>
+    <property id="receiver" columnName="RECEIVER" type="LONG" description="接警人"/>
+    <property id="rectime" columnName="RECTIME" type="DATETIME" description="接警时间"/>
+    <property id="reportEventId" columnName="REPORT_EVENT_ID" type="LONG" description="上报事件接警id"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="threeCompany" columnName="THREE_COMPANY" type="LONG" description="三级公司"/>
+    <property id="threeEPInfo" columnName="THREEEPINFO" type="TEXT" description="三级公司应急预案"/>
+    <property id="twoCompany" columnName="TWO_COMPANY" type="LONG" description="二级公司"/>
+    <property id="twoEPInfo" columnName="TWOEPINFO" type="TEXT" description="二级公司应急预案"/>
+    <property id="voiceConfigFlag" columnName="VOICE_CONFIG_FLAG" type="BOOLEAN" description="语音配置标记"/>
+    <property id="voiceConfigId" columnName="VOICE_CONFIG_ID" type="LONG" description="语音配置"/>
+    <property id="wounderPerson" columnName="WOUNDER_PERSON" type="INTEGER" description="受伤人数"/>
+  </model>
+  <model id="CctvRecord" tableName="SES_ECD_ALARM_CCTVRECORD" extends="AbstractEcPartEntity" description="录像回放">
+    <property id="duration" columnName="DURATION" type="TEXT" description="时长"/>
+    <property id="hls" columnName="HLS" type="TEXT" description="地址"/>
+    <property id="important" columnName="IMPORTANT" type="TEXT" description="重要性"/>
+    <property id="name" columnName="NAME" type="TEXT" description="通道号"/>
+    <property id="recordId" columnName="RECORD_ID" type="LONG" description="接警Id"/>
+    <property id="startAt" columnName="START_AT" type="TEXT" description="开始时间"/>
+  </model>
+  <model id="Communication" tableName="ECD_COMMUNICATIONS" extends="AbstractEcPartEntity" description="通信记录">
+    <property id="almAlarmRecord" columnName="ALM_ALARM_RECORD" type="LONG" description="接警记录"/>
+    <property id="messageContent" columnName="MESSAGE_CONTENT" type="LONGTEXT" description="消息内容"/>
+    <property id="sendingMethod" columnName="SENDING_METHOD" type="TEXT" description="发送方式"/>
+    <property id="sendingTime" columnName="SENDING_TIME" type="DATETIME" description="发送时间"/>
+  </model>
+  <model id="EmePlanObj" tableName="SES_ECD_EME_PLAN_OBJS" extends="AbstractEcPartEntity" description="关联预案">
+    <property id="alarmId" columnName="ALARM_ID" type="LONG" description="接警ID"/>
+    <property id="isClose" columnName="IS_CLOSE" type="BOOLEAN" description="是否启用, 标识所关联的预案是否启用，启用的预案可下达指令"/>
+    <property id="planObj" columnName="PLAN_OBJ" type="LONG" description="应急预案"/>
+  </model>
+  <model id="MesPerson" tableName="ECD_MES_PEOPLE" extends="AbstractEcPartEntity" description="推送人员">
+    <property id="alarmRecordId" columnName="ALARM_RECORD_ID" type="LONG" description="接警ID"/>
+    <property id="personId" columnName="PERSON_ID" type="LONG" description="人员ID"/>
+  </model>
+  <model id="RecordAction" tableName="SES_ECD_RECORD_ACTIONS" extends="AbstractEcPartEntity" description="关联行动">
+    <property id="actionAddr" columnName="ACTION_ADDR" type="TEXT" description="行动地点"/>
+    <property id="actionCatogory" columnName="ACTION_CATOGORY" type="TEXT" description="行动分类"/>
+    <property id="actionState" columnName="ACTION_STATE" type="TEXT" description="行动状态"/>
+    <property id="actionTime" columnName="ACTION_TIME" type="DATETIME" description="行动时间"/>
+    <property id="almAlarmRecord" columnName="ALM_ALARM_RECORD" type="LONG" description="接警记录"/>
+    <property id="description" columnName="DESCRIPTION" type="TEXT" description="行动描述"/>
+    <property id="ownDepartment" columnName="OWN_DEPARTMENT" type="TEXT" description="责任单位"/>
+    <property id="ownPerson" columnName="OWN_PERSON" type="TEXT" description="责任人"/>
+    <property id="point" columnName="POINT" type="TEXT" description="坐标"/>
+    <property id="trackRecord" columnName="TRACK_RECORD" type="TEXT" description="跟踪记录"/>
+  </model>
+  <model id="RecorSituation" tableName="SES_ECD_RECOR_SITUATIONS" extends="AbstractEcPartEntity" description="关联态势">
+    <property id="addresss" columnName="ADDRESSS" type="TEXT" description="发生地点"/>
+    <property id="almAlarmRecord" columnName="ALM_ALARM_RECORD" type="LONG" description="接警记录"/>
+    <property id="deathPerson" columnName="DEATH_PERSON" type="TEXT" description="死亡人数"/>
+    <property id="describtion" columnName="DESCRIBTION" type="TEXT" description="态势描述"/>
+    <property id="occursTime" columnName="OCCURS_TIME" type="DATETIME" description="发生时间"/>
+    <property id="point" columnName="POINT" type="TEXT" description="坐标"/>
+    <property id="reportPerson" columnName="REPORT_PERSON" type="TEXT" description="上报人"/>
+    <property id="situationType" columnName="SITUATION_TYPE" type="TEXT" description="态势状态"/>
+    <property id="woundedPerson" columnName="WOUNDED_PERSON" type="TEXT" description="受伤人数"/>
+  </model>
+  <model id="AlertRecord" tableName="SES_ECD_ALERT_RECORDS" extends="AbstractEcFullEntity" description="报警记录">
+    <property id="alarmStaus" columnName="ALARM_STAUS" type="SYSTEMCODE" description="报警状态"/>
+    <property id="alarmTime" columnName="ALARM_TIME" type="DATETIME" description="报警时间"/>
+    <property id="alarmValue" columnName="ALARM_VALUE" type="TEXT" description="报警内容"/>
+    <property id="code" columnName="CODE" type="TEXT" description="报警编码"/>
+    <property id="lowerLimit" columnName="LOWER_LIMIT" type="DECIMAL" scale="6" description="下限"/>
+    <property id="tagAddress" columnName="TAG_ADDRESS" type="TEXT" description="位置"/>
+    <property id="tagName" columnName="TAG_NAME" type="TEXT" description="报警装置"/>
+    <property id="tagType" columnName="TAG_TYPE" type="SYSTEMCODE" description="报警来源"/>
+    <property id="upperLimit" columnName="UPPER_LIMIT" type="DECIMAL" scale="6" description="上限"/>
+    <property id="warnId" columnName="WARN_ID" type="TEXT" description="告警编号"/>
+  </model>
+  <model id="BroadcastInfo" tableName="ECD_BROADCAST_INFOS" extends="AbstractEcFullEntity" description="广播配置信息, 广播配置信息">
+    <property id="coordinate" columnName="COORDINATE" type="LAYER" description="广播坐标"/>
+    <property id="deviceCode" columnName="DEVICE_CODE" type="TEXT" description="设备编码"/>
+    <property id="deviceLocation" columnName="DEVICE_LOCATION" type="TEXT" description="设备位置"/>
+    <property id="deviceName" columnName="DEVICE_NAME" type="TEXT" description="设备名称"/>
+    <property id="remark" columnName="REMARK" type="LONGTEXT" description="备注"/>
+  </model>
+  <model id="ChangeLog" tableName="ECD_CHANGE_LOGS" extends="AbstractEcFullEntity" description="一张图操作记录">
+    <property id="asscioateId" columnName="ASSCIOATE_ID" type="LONG" description="业务关联id"/>
+    <index name="IDX_CHANGELOG_ASSCIOAT" columns="asscioateId"/>
+    <property id="bisType" columnName="BIS_TYPE" type="TEXT" description="业务类型, 所属业务类型"/>
+    <property id="content" columnName="CONTENT" type="TEXT" description="操作内容, 操作内容"/>
+    <property id="eventId" columnName="EVENT_ID" type="LONG" description="应急事件"/>
+    <property id="relateId" columnName="RELATE_ID" type="INTEGER" description="关联业务id（废弃）, 关联业务id"/>
+  </model>
+  <model id="DispatConfig" tableName="SES_ECD_DISPAT_CONFIGS" extends="AbstractEcFullEntity" description="调度员配置">
+    <property id="person" columnName="PERSON" type="LONG" description="调度员"/>
+  </model>
+  <model id="EntranceInfo" tableName="ECD_ENTRANCE_INFOS" extends="AbstractEcFullEntity" description="门禁基础信息">
+    <property id="coordinates" columnName="COORDINATES" type="LAYER" description="门禁坐标"/>
+    <property id="name" columnName="NAME" type="TEXT" description="门禁名称"/>
+    <property id="openedState" columnName="OPENED_STATE" type="BOOLEAN" description="门禁开启状态, 门禁开启状态"/>
+    <property id="remark" columnName="REMARK" type="LONGTEXT" description="备注, 备注"/>
+  </model>
+  <model id="EcdAlertImg" tableName="ECD_ECD_ALERT_IMGS" extends="AbstractEcPartEntity" description="报警设备现场图片">
+    <property id="alertRecord" columnName="ALERT_RECORD" type="LONG" description="报警记录"/>
+    <property id="url" columnName="URL" type="LONGTEXT" description="图片地址"/>
+  </model>
+  <model id="EcdAlertRecord" tableName="ECD_ECD_ALERT_RECORDS" extends="AbstractEcFullEntity" description="报警记录">
+    <property id="alarmCode" columnName="ALARM_CODE" type="TEXT" description="报警编码"/>
+    <property id="alarmContent" columnName="ALARM_CONTENT" type="LONGTEXT" description="报警详情"/>
+    <property id="alarmDeviceName" columnName="ALARM_DEVICE_NAME" type="TEXT" description="报警装置名称"/>
+    <property id="alarmLevel" columnName="ALARM_LEVEL" type="TEXT" description="报警等级"/>
+    <property id="alarmName" columnName="ALARM_NAME" type="TEXT" description="报警点名"/>
+    <property id="alarmOrigin" columnName="ALARM_ORIGIN" type="TEXT" description="报警来源"/>
+    <property id="alarmState" columnName="ALARM_STATE" type="TEXT" description="报警状态"/>
+    <property id="alarmTableSource" columnName="ALARM_TABLE_SOURCE" type="TEXT" description="报警表来源"/>
+    <property id="alarmTime" columnName="ALARM_TIME" type="DATETIME" description="报警产生时间"/>
+    <property id="alarmType" columnName="ALARM_TYPE" type="TEXT" description="报警类型"/>
+    <property id="deviceLocationX" columnName="DEVICE_LOCATIONX" type="DECIMAL" scale="6" description="报警装置坐标经度"/>
+    <property id="deviceLocationY" columnName="DEVICE_LOCATIONY" type="DECIMAL" scale="6" description="报警装置坐标纬度"/>
+    <property id="duration" columnName="DURATION" type="INTEGER" description="报警持续时间（单位秒）"/>
+    <property id="durationdays" columnName="DURATIONDAYS" type="INTEGER" description="持续天数"/>
+    <property id="durationTime" columnName="DURATION_TIME" type="TEXT" description="持续时间"/>
+    <property id="endType" columnName="END_TYPE" type="TEXT" description="恢复类型"/>
+    <property id="endValue" columnName="END_VALUE" type="TEXT" description="恢复值"/>
+    <property id="hhv" columnName="HHV" type="TEXT" description="上上限阈值"/>
+    <property id="hv" columnName="HV" type="TEXT" description="上限阈值"/>
+    <property id="lifeTime" columnName="LIFE_TIME" type="DATETIME" description="报警结束时间"/>
+    <property id="lifeValue" columnName="LIFE_VALUE" type="TEXT" description="解除时阈值"/>
+    <property id="limitValue" columnName="LIMIT_VALUE" type="TEXT" description="报警时阀值"/>
+    <property id="llv" columnName="LLV" type="TEXT" description="下下限阈值"/>
+    <property id="lv" columnName="LV" type="TEXT" description="下限阈值"/>
+    <property id="mapPoint" columnName="MAP_POINT" type="LAYER" description="坐标点"/>
+    <property id="realTimeValue" columnName="REAL_TIME_VALUE" type="DECIMAL" scale="6" description="报警值"/>
+    <property id="recordId" columnName="RECORD_ID" type="TEXT" description="recordId"/>
+    <property id="unitName" columnName="UNIT_NAME" type="TEXT" description="单位名称"/>
+  </model>
+  <model id="EcdAlertVideo" tableName="ECD_ECD_ALERT_VIDEOS" extends="AbstractEcPartEntity" description="报警设备现场视频">
+    <property id="alertRecord" columnName="ALERT_RECORD" type="LONG" description="报警记录"/>
+    <property id="url" columnName="URL" type="LONGTEXT" description="视频地址"/>
+  </model>
+  <model id="EcdAction" tableName="SES_ECD_ECD_ACTIONS" extends="AbstractEcPartEntity" description="应急行动">
+    <property id="actionAddr" columnName="ACTION_ADDR" type="TEXT" description="行动地点"/>
+    <property id="actionId" columnName="ACTION_ID" type="LONG" description="应急行动ID"/>
+    <property id="actionState" columnName="ACTION_STATE" type="SYSTEMCODE" description="行动状态"/>
+    <property id="beginTime" columnName="BEGIN_TIME" type="DATETIME" description="实际开始时间"/>
+    <property id="description" columnName="DESCRIPTION" type="TEXT" description="行动描述"/>
+    <property id="eventId" columnName="EVENT_ID" type="LONG" description="应急事件"/>
+    <property id="owners" columnName="OWNERS" type="TEXT" description="负责人"/>
+  </model>
+  <model id="EcdCommom" tableName="SES_ECD_ECD_COMMOMS" extends="AbstractEcPartEntity" description="指令">
+    <property id="actionAddress" columnName="ACTION_ADDRESS" type="TEXT" description="行动地点"/>
+    <property id="actionCatogory" columnName="ACTION_CATOGORY" type="SYSTEMCODE" description="行动分类"/>
+    <property id="actionDescription" columnName="ACTION_DESCRIPTION" type="TEXT" description="行动描述"/>
+    <property id="actionName" columnName="ACTION_NAME" type="TEXT" description="行动名称"/>
+    <property id="commomId" columnName="COMMOM_ID" type="LONG" description="指令ID"/>
+    <property id="commomState" columnName="COMMOM_STATE" type="SYSTEMCODE" description="状态"/>
+    <property id="emcPlanId" columnName="EMC_PLAN_ID" type="LONG" description="应急预案ID"/>
+    <property id="eventId" columnName="EVENT_ID" type="LONG" description="应急事件"/>
+    <property id="instLayer" columnName="INST_LAYER" type="LAYER" description="坐标"/>
+    <property id="isMapPoint" columnName="IS_MAP_POINT" type="BOOLEAN" description="是否已录入坐标"/>
+    <property id="isMapPointTxt" columnName="IS_MAP_POINT_TXT" type="TEXT" description="是否已录入坐标"/>
+    <property id="owners" columnName="OWNERS" type="TEXT" description="负责人"/>
+  </model>
+  <model id="EcdStatius" tableName="SES_ECD_ECD_STATIUSS" extends="AbstractEcPartEntity" description="应急态势">
+    <property id="describtion" columnName="DESCRIBTION" type="TEXT" description="态势描述"/>
+    <property id="eventId" columnName="EVENT_ID" type="LONG" description="应急事件"/>
+    <property id="occursTime" columnName="OCCURS_TIME" type="DATETIME" description="发生时间"/>
+    <property id="position" columnName="POSITION" type="TEXT" description="发生地点"/>
+    <property id="reportPerson" columnName="REPORT_PERSON" type="LONG" description="上报人"/>
+    <property id="stateId" columnName="STATE_ID" type="LONG" description="应急态势ID"/>
+  </model>
+  <model id="ActVideoCamera" tableName="ECD_ACT_VIDEO_CAMERAS" extends="AbstractEcPartEntity" description="摄像头">
+    <property id="camera" columnName="CAMERA" type="LONG" description="摄像头"/>
+    <property id="emcAction" columnName="EMC_ACTION" type="LONG" description="应急行动id"/>
+  </model>
+  <model id="EmcAction" tableName="SES_ECD_EMC_ACTIONS" extends="AbstractEcFullEntity" description="应急行动">
+    <property id="actionAddr" columnName="ACTION_ADDR" type="TEXT" description="行动地点"/>
+    <property id="actionCatogory" columnName="ACTION_CATOGORY" type="SYSTEMCODE" description="行动分类"/>
+    <property id="actionState" columnName="ACTION_STATE" type="SYSTEMCODE" description="行动状态"/>
+    <property id="actionTime" columnName="ACTION_TIME" type="DATETIME" description="行动时间"/>
+    <property id="beginTime" columnName="BEGIN_TIME" type="DATETIME" description="实际开始时间"/>
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="commonId" columnName="COMMON_ID" type="LONG" description="指令Id"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="description" columnName="DESCRIPTION" type="TEXT" description="行动描述"/>
+    <property id="endTime" columnName="END_TIME" type="DATETIME" description="实际结束时间"/>
+    <property id="eventId" columnName="EVENT_ID" type="LONG" description="应急事件"/>
+    <property id="icon" columnName="ICON" type="PICTURE" description="图标"/>
+    <property id="iconObjGis" columnName="ICON_OBJ_GIS" type="LONG" description="图标2"/>
+    <property id="isPoint" columnName="IS_POINT" type="BOOLEAN" description="是否已录入坐标"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="ownPerson" columnName="OWN_PERSON" type="TEXT" description="责任人"/>
+    <property id="planTime" columnName="PLAN_TIME" type="DECIMAL" scale="2" description="预计耗时"/>
+    <property id="point" columnName="POINT" type="LAYER" description="坐标"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="trackRecord" columnName="TRACK_RECORD" type="TEXT" description="跟踪记录"/>
+  </model>
+  <model id="MainDepartment" tableName="SES_ECD_MAIN_DEPARTMENTS" extends="AbstractEcPartEntity" description="责任单位">
+    <property id="actionId" columnName="ACTION_ID" type="LONG" description="应急行动ID"/>
+    <property id="ownDepartment" columnName="OWN_DEPARTMENT" type="LONG" description="责任单位（作废）"/>
+    <property id="ownDepartmentN" columnName="OWN_DEPARTMENTN" type="LONG" description="责任单位"/>
+  </model>
+  <model id="MainPeople" tableName="SES_ECD_MAIN_PEOPLES" extends="AbstractEcPartEntity" description="责任人">
+    <property id="actionId" columnName="ACTION_ID" type="LONG" description="应急行动ID"/>
+    <property id="owner" columnName="OWNER" type="LONG" description="责任人（作废）"/>
+    <property id="ownPerson" columnName="OWN_PERSON" type="LONG" description="责任人"/>
+  </model>
+  <model id="EmcSituation" tableName="SES_ECD_EMC_SITUATIONS" extends="AbstractEcFullEntity" description="应急态势">
+    <property id="bigintparama" columnName="BIGINTPARAMA" type="INTEGER" description="自定义字段IPA"/>
+    <property id="bigintparamb" columnName="BIGINTPARAMB" type="INTEGER" description="自定义字段IPB"/>
+    <property id="charparama" columnName="CHARPARAMA" type="TEXT" length="2000" description="自定义字段CPA"/>
+    <property id="charparamb" columnName="CHARPARAMB" type="TEXT" length="2000" description="自定义字段CPB"/>
+    <property id="charparamc" columnName="CHARPARAMC" type="TEXT" length="2000" description="自定义字段CPC"/>
+    <property id="charparamd" columnName="CHARPARAMD" type="TEXT" length="2000" description="自定义字段CPD"/>
+    <property id="commonAddress" columnName="COMMON_ADDRESS" type="LONG" description="事发地点(作废)"/>
+    <property id="dateparama" columnName="DATEPARAMA" type="DATETIME" description="自定义字段DPA"/>
+    <property id="dateparamb" columnName="DATEPARAMB" type="DATETIME" description="自定义字段DPB"/>
+    <property id="deathPerson" columnName="DEATH_PERSON" type="INTEGER" description="死亡人数"/>
+    <property id="describtion" columnName="DESCRIBTION" type="TEXT" description="态势描述"/>
+    <property id="eventId" columnName="EVENT_ID" type="LONG" description="应急事件"/>
+    <property id="icon" columnName="ICON" type="PICTURE" description="图标"/>
+    <property id="iconObjGis" columnName="ICON_OBJ_GIS" type="LONG" description="图标2"/>
+    <property id="numberparama" columnName="NUMBERPARAMA" type="DECIMAL" scale="6" description="自定义字段FPA"/>
+    <property id="numberparamb" columnName="NUMBERPARAMB" type="DECIMAL" scale="6" description="自定义字段FPB"/>
+    <property id="objparama" columnName="OBJPARAMA" type="LONG" description="自定义字段OPA"/>
+    <property id="objparamb" columnName="OBJPARAMB" type="LONG" description="自定义字段OPB"/>
+    <property id="occursTime" columnName="OCCURS_TIME" type="DATETIME" description="发生时间"/>
+    <property id="point" columnName="POINT" type="LAYER" description="坐标"/>
+    <property id="position" columnName="POSITION" type="TEXT" description="事发地点"/>
+    <property id="reportPerson" columnName="REPORT_PERSON" type="LONG" description="上报人"/>
+    <property id="scparama" columnName="SCPARAMA" type="TEXT" length="2000" description="自定义字段SCPA"/>
+    <property id="scparamb" columnName="SCPARAMB" type="TEXT" length="2000" description="自定义字段SCPB"/>
+    <property id="situationType" columnName="SITUATION_TYPE" type="SYSTEMCODE" description="态势状态"/>
+    <property id="source" columnName="SOURCE" type="SYSTEMCODE" description="来源"/>
+    <property id="voicePath" columnName="VOICE_PATH" type="TEXT" description="语音存放路径"/>
+    <property id="woundedPerson" columnName="WOUNDED_PERSON" type="INTEGER" description="受伤人数"/>
+  </model>
+  <model id="EmEventLeveL" tableName="ECD_EM_EVENT_LEVELS" extends="AbstractEcFullEntity" description="事件分级">
+    <property id="emEventLevel" columnName="EM_EVENT_LEVEL" type="TEXT" description="事件分级"/>
+    <property id="gradingDefinition" columnName="GRADING_DEFINITION" type="TEXT" length="2000" description="定义"/>
+    <property id="isInitialize" columnName="IS_INITIALIZE" type="BOOLEAN" description="是否默认数据"/>
+  </model>
+  <model id="EmEventType" tableName="ECD_EM_EVENT_TYPES" extends="AbstractEcPartEntity" description="事件分类">
+    <property id="emEventType" columnName="EM_EVENT_TYPE" type="TEXT" description="事件分类"/>
+    <property id="isInitialize" columnName="IS_INITIALIZE" type="BOOLEAN" description="是否默认数据"/>
+  </model>
+  <model id="EventDescribe" tableName="SES_ECD_EVENT_DESCRIBES" extends="AbstractEcFullEntity" description="事件描述">
+    <property id="name" columnName="NAME" type="TEXT" description="事件描述"/>
+  </model>
+  <model id="EcdParamConfig" tableName="ECD_PARAM_CONFIGS" extends="AbstractEcFullEntity" description="参数配置">
+    <property id="configCode" columnName="CONFIG_CODE" type="TEXT" description="参数编码"/>
+    <property id="configName" columnName="CONFIG_NAME" type="TEXT" description="参数名称"/>
+    <property id="configRemark" columnName="CONFIG_REMARK" type="TEXT" description="备注"/>
+    <property id="configValue" columnName="CONFIG_VALUE" type="TEXT" description="参数值"/>
+  </model>
+  <model id="ParamOption" tableName="ECD_PARAM_OPTIONS" extends="AbstractEcPartEntity" description="配置参数项">
+    <property id="optionCode" columnName="OPTION_CODE" type="TEXT" description="编码"/>
+    <property id="optionName" columnName="OPTION_NAME" type="TEXT" description="名称"/>
+    <property id="optionValue" columnName="OPTION_VALUE" type="TEXT" description="配置值"/>
+    <property id="paramConfig" columnName="PARAM_CONFIG" type="LONG" description="参数配置项"/>
+    <property id="remark" columnName="REMARK" type="TEXT" description="备注"/>
+  </model>
+  <model id="SignalConfig" tableName="SES_ECD_SIGNAL_CONFIGS" extends="AbstractEcFullEntity" description="接口配置">
+    <property id="alarmTime" columnName="ALARM_TIME" type="INTEGER" description="重复报警间隔(秒)"/>
+    <property id="enable" columnName="ENABLE" type="BOOLEAN" description="是否启用"/>
+    <property id="ip" columnName="IP" type="TEXT" description="IP"/>
+    <property id="port" columnName="PORT" type="INTEGER" description="端口"/>
+    <property id="signalProvider" columnName="SIGNAL_PROVIDER" type="SYSTEMCODE" description="融合通信供应商"/>
+    <property id="signalType" columnName="SIGNAL_TYPE" type="SYSTEMCODE" description="接口类型"/>
+    <property id="sourceTerminal" columnName="SOURCE_TERMINAL" type="INTEGER" description="源终端号码"/>
+  </model>
+  <model id="SourceTerminal" tableName="ECD_SOURCE_TERMINALS" extends="AbstractEcPartEntity" description="总机终端">
+    <property id="terminalName" columnName="TERMINAL_NAME" type="TEXT" description="终端名称"/>
+    <property id="terminalNo" columnName="TERMINAL_NO" type="TEXT" description="终端号码"/>
+  </model>
+  <model id="Sentence" tableName="SES_ECD_SENTENCES" extends="AbstractEcFullEntity" description="态势描述">
+    <property id="name" columnName="NAME" type="TEXT" description="态势描述"/>
+  </model>
+  <model id="TagConfig" tableName="SES_ECD_TAG_CONFIGS" extends="AbstractEcFullEntity" description="报警装置配置">
+    <property id="lowerLimit" columnName="LOWER_LIMIT" type="DECIMAL" scale="6" description="下限"/>
+    <property id="tagAddress" columnName="TAG_ADDRESS" type="TEXT" description="位置"/>
+    <property id="tagName" columnName="TAG_NAME" type="TEXT" length="64" description="监听装置(位号)"/>
+    <index name="IDX_TAGCONFIG_TAGNAME" columns="tagName"/>
+    <property id="tagType" columnName="TAG_TYPE" type="SYSTEMCODE" description="报警类型"/>
+    <property id="upperLimit" columnName="UPPER_LIMIT" type="DECIMAL" scale="6" description="上限"/>
+  </model>
+  <model id="VoiceConfig" tableName="ECD_VOICE_CONFIGS" extends="AbstractEcFullEntity" description="语音配置">
+    <property id="contentText" columnName="CONTENT_TEXT" type="LONGTEXT" description="自定义语言文字"/>
+    <property id="customContnet" columnName="CUSTOM_CONTNET" type="BOOLEAN" description="是否自定义语音文本内容"/>
+    <property id="systemVoiceIndex" columnName="SYSTEM_VOICE_INDEX" type="TEXT" description="融合通讯音频文件序号"/>
+    <property id="voiceRemark" columnName="VOICE_REMARK" type="TEXT" description="备注"/>
+  </model>
+  <model id="VoiceMember" tableName="ECD_VOICE_MEMBERS" extends="AbstractEcPartEntity" description="语音关联小组">
+    <property id="eabSectionId" columnName="EAB_SECTION_ID" type="LONG" description="通知小组"/>
+    <property id="voiceConfigId" columnName="VOICE_CONFIG_ID" type="LONG" description="语音配置id"/>
+  </model>
+</Models>

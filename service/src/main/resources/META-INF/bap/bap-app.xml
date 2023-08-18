@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appList>  
+  <app>
+        <code>SES_EMCommand</code>
+        <name>应急指挥</name>
+        <appType>base_AppType/02</appType>
+        <screenType>SCREEN_TYPE/03</screenType>
+        <moduleCode>SESECD_1.0.0</moduleCode>
+        <url></url>
+        <appIcon></appIcon>
+        <powerFlag>true</powerFlag>
+        <menuCode>SESECD_1.0.0_emcAction_actionList</menuCode>
+        <isHidden>false</isHidden>
+        <sort>22</sort>
+        <cid>1000</cid>
+        <remark>测试菜单编码A</remark>
+    </app>
+</appList>

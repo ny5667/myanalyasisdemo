@@ -1,0 +1,110 @@
+/* CUSTOM CODE START(serviceimpl,import,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+import com.supcon.orchid.SESECD.services.*;
+import com.supcon.orchid.SESECD.DTO.*;
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeSave,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterSave,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+		customSESECDEmcSituationService.customAfterSaveEmcSituation(emcSituation,objects);
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeDelete,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterDelete,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeRestore,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterRestore,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,customGenerateCodes,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,customGenerateSummarys,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeServiceDestroy,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeInitBean,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterInitBean,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeImportEmcSituation,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterImportEmcSituation,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,functions,SESECD_1.0.0_emcSituation_EmcSituation,SESECD_1.0.0) */
+// 自定义代码
+	@Autowired
+	private com.supcon.orchid.SESECD.services.alarm.record.CustomSESECDAlarmService customSESECDAlarmService;
+	@Autowired
+	private CustomSESECDWsService customSESECDWsService;
+	@Autowired
+	private com.supcon.orchid.SESECD.services.mixmessage.CustomSESECDSendMessageService customSendMessageService;
+	@Autowired
+	private com.supcon.orchid.SESECD.services.situation.CustomSESECDEmcSituationService customSESECDEmcSituationService;
+/* CUSTOM CODE END */

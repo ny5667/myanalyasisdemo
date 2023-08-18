@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,viewport-fit=cover">
+	<meta name="meta-theme-set" content="default" />
+	<title>事故案例查看</title>
+	<link href="/greenDill/mobile-lcdp/css/theme/default.min.css" rel="stylesheet" id="link-theme-css">
+	<link href="/greenDill/mobile-lcdp/css/styles.chunk.css?v=1691391808561" rel="stylesheet" />
+	<script>		
+		var loadScript = function(url, placeBody) {
+			function loadUrlContent(url, successCallback, errorCallback) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", url, false);
+				if ("overrideMimeType" in xhr) {
+					xhr.overrideMimeType("text/plain");
+				}
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === 4) {
+					if (xhr.status === 0 || xhr.status === 200) {
+						successCallback(xhr.responseText);
+					} else {
+						errorCallback && errorCallback();
+						throw new Error("Could not load " + url);
+					}
+					}
+				};
+				return xhr.send(null);
+			}
+			var isChrome = window.chrome && /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+			if (!isChrome) {
+				url += '-es5';
+			}
+			url += '.js?v=' + Math.random();
+			
+			loadUrlContent(url, function(content){
+				var parentEl = document.getElementsByTagName('head')[0];
+				var s = document.createElement('script');
+				s.text = content;
+				parentEl.appendChild(s);
+			});
+		};
+	</script>
+	<!-- 自定义代码，在custom对应目录下 -->
+	<!-- head.html--start -->
+	
+	<!-- head.html--end -->
+	<script>
+		
+		
+		
+	</script>
+	<script type="text/javascript">
+		var pageConfig = {
+			"prefix": "/msService",// url前缀
+			"viewCode": "SESECD_1.0.0_alarmRecord_accidentCaseCheck__mobile__", //  视图编码
+			"entityCode":"SESECD_1.0.0_alarmRecord",// 实体编码
+			"menuCode": "SESECD_1.0.0_alarmRecord_accidentCaseCheck",
+			"hasAttachment":"false",
+			"viewName": "accidentCaseCheck__mobile__",// 视图名称
+			"viewTitle": "事故案例查看",//视图标题
+			"viewType": "VIEW",// 视图类型
+			"modelCode": "SESECD_1.0.0_alarmRecord_Accident",// 模型编码
+			"isMain":false,// 主模型
+			"permissionCode":null, // 视图权限操作码（主要参照视图使用）
+			"showType": "SINGLE",// 视图展示类型
+			"modelAlias": "accident",// 模型别名
+			"workflowEnabled": false,// 启用工作流
+			"listButtons":{
+			},
+			"interfaceApi": {
+			    "downloadFile":"/SESECD/baseService/workbench/download",//  下载附件接口
+			    "uploadList": "/SESECD/baseService/workbench/upload-list", //  附件列表
+                "countFile": "/SESECD/baseService/workbench/countFile", //  附件列表
+				"PreviewAttachments":"/SESECD/baseService/workbench/preview",//附件预览
+                "PreviewPicture":"/SESECD/baseService/workbench/preview/picture",//图片预览
+                "authenticationMessage":"/msService/SESECD/baseService/workbench/download/getAuthenticationMessage",//附件下载预览鉴权信息
+				"sourceData": "/msService/SESECD/alarmRecord/accident/data", //  表单数据
+                "datagridData": "/msService/SESECD/alarmRecord/accident/data-", //  表格数据源
+                "submit": "/msService/SESECD/alarmRecord/accident/accidentCaseCheck__mobile__/submit", //  表单提交
+                "save": "/msService/SESECD/alarmRecord/accident/accidentCaseCheck__mobile__/save", //  表单保存
+                "dealInfoList": "/msService/SESECD/alarmRecord/accident/dealInfo-list", //  意见处理
+                "editStates": "/msService/SESECD/alarmRecord/accident/editStates", //  配置信息
+				"userRef":"/greenDill/mobile-static/user.html",//工作流选择人员
+				"echartsData": "/msService/SESECD/alarmRecord/accident/echartsData", //  图表数据源
+			},
+			"baseServiceApi": {
+                "flowRoot": "/msService/baseService/workflow/flowRoot", //  路由数据
+                "layoutJson": "/msService/baseService/view/layoutJson", //  布局数据
+                "systemCodeJson": "/inter-api/systemcode/v1/systemCodeJson", //  系统编码
+                "uploadFile": "/inter-api/file-server/v1/file/upload/file", //  附件上传
+                "deleteFile": "/inter-api/file-server/v1/file/delete", //  附件删除
+                "mneClient": "/msService/baseService/workbench/common/mneClient", //  助记码
+            },
+		}
+	</script>
+</head>
+
+<body class="supos-container">
+	<div id="root"></div>
+	<script src="/greenDill/mobile-lcdp/js/support/Intl.min.js"></script>
+    <script src="/greenDill/mobile-lcdp/js/vender-rmc.chunk.js?v=1691391808561"></script>
+    <script src="/greenDill/mobile-lcdp/js/styles.chunk.js?v=1691391808561"></script>
+    <script src="/greenDill/mobile-lcdp/js/vender-sup-mobile.chunk.js?v=1691391808561"></script>
+    <script src="/greenDill/mobile-lcdp/js/vender-antd-mobile.chunk.js?v=1691391808561"></script>
+    <script src="/greenDill/mobile-lcdp/js/vender-react.chunk.js?v=1691391808561"></script>
+    <script src="/greenDill/mobile-lcdp/js/vender-polyfill.chunk.js?v=1691391808561"></script>
+    <script src="/greenDill/mobile-lcdp/js/vender.chunk.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/mobile-lcdp/js/edit.js?v=1691391808561"></script></script>
+	<!-- 自定义代码，在custom对应目录下 -->
+	<!-- body.html--start -->
+	
+	<!-- body.html--end -->
+	<script>
+		
+	</script>
+</body>
+</html>

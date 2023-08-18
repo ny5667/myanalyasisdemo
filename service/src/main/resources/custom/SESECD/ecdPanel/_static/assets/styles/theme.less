@@ -1,0 +1,81 @@
+@import '~sup-ui/lib/style/themes/default.less';
+@import '~sup-ui/dist/sup-ui.less';
+
+:root {
+  @select-col-prop-bg: #ddf2f2;
+  @pt-sum-bg: #f5f5f5;
+  @pt-color: #505050;
+  // @select-col-prop-border: rgba(255, 193, 7, 0.6);
+
+  /* 超级表格部分样式 */
+
+  .sup-datagrid-container {
+    .select-col-prop {
+      background-color: @select-col-prop-bg;
+      // border: 1px solid @select-col-prop-border;
+    }
+    .pt-sum-bg {
+      background-color: @pt-sum-bg;
+      color: @pt-color;
+    }
+  }
+  .sup-datagrid-cell-formatter-textarea,
+  .micro-service {
+    .anticon svg {
+      color: @primary-color;
+    }
+
+    .anticon.warning-icon svg {
+      // color: #e64c66;
+      color: @error-color;
+    }
+  }
+  // 附件组件
+  .supplant-multfilesUpload-file-div:not(.hoverDisable):hover {
+    border-color: @primary-color;
+  }
+  // 参照组件
+  .supplant-referenceSelect-wrap:not(.hoverDisable):hover {
+    border-color: @primary-color;
+  }
+  // 多选系统编码
+  .supplant-systemcodeSelect-wrap {
+    .rc-select:hover {
+      border-color: @primary-color;
+    }
+  }
+
+  .red-theme {
+  }
+
+  .volcano-theme {
+  }
+
+  .orange-theme {
+  }
+
+  .cyan-theme {
+    .sup-datagrid-container {
+      .select-col-prop {
+        background-color: @select-col-prop-bg;
+        // border: 1px solid @select-col-prop-border;
+      }
+      .pt-sum-bg {
+        background-color: @pt-sum-bg;
+        color: @pt-color;
+      }
+    }
+  }
+
+  .lime-theme {
+  }
+
+  .blue-theme {
+  }
+
+  .geekblue-theme {
+  }
+
+  .purple-theme {
+  }
+}

@@ -1,0 +1,102 @@
+/* CUSTOM CODE START(serviceimpl,import,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeSave,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterSave,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeDelete,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterDelete,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeRestore,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterRestore,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,customGenerateCodes,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,customGenerateSummarys,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeServiceDestroy,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeInitBean,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterInitBean,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,beforeImportEcdCommom,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,afterImportEcdCommom,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */ 
+
+
+
+/* CUSTOM CODE START(serviceimpl,functions,SESECD_1.0.0_ecdPanel_EcdCommom,SESECD_1.0.0) */
+// 自定义代码
+
+/* CUSTOM CODE END */

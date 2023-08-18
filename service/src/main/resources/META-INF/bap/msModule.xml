@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <msServiceCode>ZH</msServiceCode>
+    <msServiceRamNum>1G</msServiceRamNum>
+    <msServiceDescription></msServiceDescription>
+    <msServiceArtifact>ZH</msServiceArtifact>
+    <msServiceName>应急指挥</msServiceName>
+    <msServiceIPHosts>127.0.0.1:7845,</msServiceIPHosts>
+</module>

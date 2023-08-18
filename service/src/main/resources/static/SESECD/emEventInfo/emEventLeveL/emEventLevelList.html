@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<!--事件分级列表-->	
+	<script>		
+		var loadScript = function(url, placeBody) {
+			function loadUrlContent(url, successCallback, errorCallback) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", url, false);
+				if ("overrideMimeType" in xhr) {
+					xhr.overrideMimeType("text/plain");
+				}
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === 4) {
+					if (xhr.status === 0 || xhr.status === 200) {
+						successCallback(xhr.responseText);
+					} else {
+						errorCallback && errorCallback();
+						throw new Error("Could not load " + url);
+					}
+					}
+				};
+				return xhr.send(null);
+			}
+			var isChrome = window.chrome && /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+			if (!isChrome) {
+				url += '-es5';
+			}
+			url += '.js?v=' + Math.random();
+			
+			loadUrlContent(url, function(content){
+				var parentEl = document.getElementsByTagName('head')[0];
+				var s = document.createElement('script');
+				s.text = content;
+				parentEl.appendChild(s);
+			});
+		};
+	</script>
+
+	<!-- 自定义代码，在custom对应目录下 -->
+	<!-- head.html--start -->
+	
+	<!-- head.html--end -->
+	<script>
+		
+		
+		
+	</script>
+	<script type="text/javascript">
+		var pageConfig = {
+			"prefix": "/msService",// url前缀
+			"viewCode": "SESECD_1.0.0_emEventInfo_emEventLevelList", //  视图编码
+			"entityCode":"SESECD_1.0.0_emEventInfo",// 实体编码
+			"menuCode": "SESECD_1.0.0_emEventInfo_emEventLevelList",
+			"viewName": "事件分级列表",// 视图名称
+			"viewType": "LIST",// 视图类型
+			"modelCode": "SESECD_1.0.0_emEventInfo_EmEventLeveL",// 模型编码
+			"moduleCode": "SESECD_1.0.0",// 模块编码
+			"moduleArtifact": "SESECD",// 编码无版本号
+			"isMain":true,// 主模型
+			"permissionCode":null, // 视图权限操作码（主要参照视图使用）
+
+
+			"showType": "SINGLE",// 视图展示类型
+			"modelAlias": "emEventLeveL",// 模型别名
+			"workflowEnabled": false,// 启用工作流
+			"listButtons":{
+                    "ADD":"emEventLevelList_add_add_SESECD_1.0.0_emEventInfo_emEventLevelList",
+                    "DELETE":"emEventLevelList_delete_del_SESECD_1.0.0_emEventInfo_emEventLevelList",
+                    "MODIFY":"emEventLevelList_update_modify_SESECD_1.0.0_emEventInfo_emEventLevelList",
+			},
+			"interfaceApi": {
+				"downloadFile":"/SESECD/baseService/workbench/download",//  下载附件接口
+				"uploadList": "/SESECD/baseService/workbench/upload-list", //  附件列表
+				"PreviewAttachments":"/SESECD/baseService/workbench/preview",//附件预览
+                "PreviewPicture":"/SESECD/baseService/workbench/preview/picture",//图片预览
+                "authenticationMessage":"/msService/SESECD/baseService/workbench/download/getAuthenticationMessage",//附件下载预览鉴权信息
+				"recall":"/msService/SESECD/emEventInfo/emEventLeveL/recall",//  流程单据撤回（基础单据无效）
+				"retrial":"/msService/SESECD/emEventInfo/emEventLeveL/retrial",//  流程单据弃审（基础单据无效）
+				"approvalInfo":"/msService/SESECD/emEventInfo/emEventLeveL/approval",// 流程批量处理弹出框
+                "approvalSubmit":"/msService/SESECD/emEventInfo/emEventLeveL/batchSubmit", //流程单据批量处理
+				"mainView": "/msService/SESECD/emEventInfo/emEventLeveL/emEventLevelView", //  主查看视图
+				"downloadXls": "/msService/SESECD/emEventInfo/emEventLeveL/downloadXls", //  下载导入模板
+				"importMainXls": "/msService/SESECD/emEventInfo/emEventLeveL/importMainXls", //  导入Excel
+				"editView": "/msService/SESECD/emEventInfo/emEventLeveL/emEventLevelEdit?",// 编辑视图
+				"deleteData": "/msService/SESECD/emEventInfo/emEventLeveL/delete",// 删除数据
+				"sourceData": "/msService/SESECD/emEventInfo/emEventLeveL/emEventLevelList-", //  列表数据
+
+				"echartsData": "/msService/SESECD/emEventInfo/emEventLeveL/echartsData", //  图表数据源
+			},
+			"baseServiceApi": {
+				"flowRoot": "/msService/baseService/workflow/flowRoot", //  路由数据
+				"layoutJson": "/msService/baseService/view/layoutJson", //  布局数据
+				"systemCodeJson": "/inter-api/systemcode/v1/systemCodeJson", //  系统编码
+				"uploadFile": "/inter-api/file-server/v1/file/upload/file", //  附件上传
+				"deleteFile": "/inter-api/file-server/v1/file/delete", //  附件删除
+				"mneClient": "/msService/baseService/workbench/common/mneClient", //  助记码
+			},
+		}
+	</script>
+</head>
+
+<body class="supos-container">
+	<div id="app"></div>
+	<script src="/greenDill/static/scripts/styles.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/static/scripts/vendors.core.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/static/scripts/vendors.antdicons.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/static/scripts/vendors.antd.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/static/scripts/i18n.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/static/scripts/vendors.commons.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/static/scripts/vendors.echarts.js?v=1691391808561"></script>
+	<script type="text/javascript" src="/greenDill/static/scripts/list.js?v=1691391808561"></script>
+	<!-- 自定义代码，在custom对应目录下 -->
+	<!-- body.html--start -->
+	
+	<!-- body.html--end -->
+	<script>
+		
+	</script>
+</body>
+</html>
